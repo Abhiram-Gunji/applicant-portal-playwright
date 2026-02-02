@@ -1,0 +1,11 @@
+{
+  "name": "applicant-automation",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0"
+  }
+}
+
