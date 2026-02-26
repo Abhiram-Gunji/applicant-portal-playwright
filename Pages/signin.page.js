@@ -1,5 +1,6 @@
 // pages/signin.page.js
-import { signinLocators } from "../locators/signin.locators";
+import { signinLocators } from "../Locators/signin.locators";
+
 
 export class SigninPage {
   constructor(page) {

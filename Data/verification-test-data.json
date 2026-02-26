@@ -1,0 +1,69 @@
+{
+  "existingUser": {
+    "email": "gunjiabhiram+dhpregression6@dataflowgroup.com",
+    "captcha": "123456",
+    "otp": "123456"
+  },
+  "newUser": {
+    "email": "newuser+test@dataflowgroup.com",
+    "captcha": "123456",
+    "otp": "123456",
+    "profile": {
+      "salutation": "Mr.",
+      "firstName": "Suyeon",
+      "lastName": "Lee",
+      "mobile": "9876543210",
+      "dob": {
+        "year": "1996",
+        "month": "Jan",
+        "date": "15"
+      },
+      "gender": "Male",
+      "nationality": "Afghanistan",
+      "profession": "Accountant"
+    }
+  },
+  "verification": {
+    "country": "Norway",
+    "authority": "The Norwegian Directorate of Health (Helsedirektoratet)",
+    "speciality": "License Application",
+    "subSpeciality": "1 Document Verification",
+    "documents": {
+      "passport": "Passport - First Page",
+      "experienceLetter": "Experience Letter"
+    },
+    "issuer": {
+      "name": "BIGFLOW",
+      "address": "north goa"
+    },
+    "files": {
+      "passport": "C:/Users/gunjiabhiram_dataflo/Downloads/Passport Sample.jpg",
+      "experience": "C:/Users/gunjiabhiram_dataflo/Downloads/wipro.png"
+    },
+    "experienceDetails": {
+      "designation": "Senior QA Engineer",
+      "startDate": {
+        "year": "2020",
+        "month": "Dec",
+        "day": "20"
+      },
+      "endDate": {
+        "year": "2024",
+        "month": "Dec",
+        "day": "15"
+      },
+      "employmentType": "Full-time",
+      "currentlyWorking": "No",
+      "firstName": "Suyeon",
+      "lastName": "Lee"
+    },
+    "payment": {
+      "cardNumber": "4012001037141112",
+      "expiryMonth": "12",
+      "expiryYear": "26",
+      "cvv": "123",
+      "cardHolder": "Abhi",
+      "otp": "123456"
+    }
+  }
+}
