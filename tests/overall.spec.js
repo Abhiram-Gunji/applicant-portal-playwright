@@ -51,20 +51,20 @@ test('Case1',async({page})=>
   }
     //Home page
     await page.getByText("Start New Verification").click();
-    await page.waitForTimeout(2000);
+    //await page.waitForTimeout(2000);
     await page.getByText("Norway").first().click();
-    await page.waitForTimeout(3000);
+    //await page.waitForTimeout(3000);
     await page.getByText("The Norwegian Directorate of Health (Helsedirektoratet)").click();
-    await page.waitForTimeout(1000);
+    //await page.waitForTimeout(1000);
     await page.click('[data-testid="testSpeciality-dropdownInput"]');
-    await page.getByText("License Application").click();
+    await page.getByText("Authorisation Application").click();
     //await page.waitForTimeout(2000);
     await page.click('[data-testid="testSubSpeciality-dropdownInput"]');
     await page.getByText("1 Document Verification").click();
     //await page.waitForTimeout(2000);
     await page.click('input[data-testid="checkbox"]');
     await page.click('button[data-testid="proceed-button"]');
-    await page.waitForTimeout(2000);
+    //await page.waitForTimeout(2000);
 
     //await page.locator("//button[@type='button']").nth(0).click();
     await page.locator('div.selectComponent_cardMain__E_SaF', {
@@ -80,14 +80,14 @@ test('Case1',async({page})=>
           {
          has: page.locator('div.selectComponent_title__zwJjs', {hasText: 'Experience Letter',}),
           }).locator('button', { hasText: 'Add' }).click();
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(1000);
     await page.locator("//button[@data-testid='undefined-button']").nth(1).click({ force: true });
     await expect(page).toHaveURL(/\/en\/verification\/select-issuers/);
     await page.locator('//input[@data-testid="organization-dropdownInput"]').fill('BIGFLOW');
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(1000);
     await page.locator('[data-testid="ia-attribution-address-line"]:has-text("north goa")').click();
     await page.getByText("Continue").click();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(1000);
     await page.waitForURL(/\/verification\/pricing-estimate/);
 
     await page.getByText("Upload Documents").click();
@@ -98,9 +98,9 @@ test('Case1',async({page})=>
     //await page.locator('//input[@data-testid="undefined-dropdownInput"]').nth(0).click();
     //await page.getByText("Andorra").click();
     await page.getByText("Save and Continue").click();
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(3000);
     await page.setInputFiles('input[type="file"]','C:/Users/gunjiabhiram_dataflo/Downloads/wipro.png');
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(3000);
     //await expect(page.locator('input[name="AttributeType@lastDesignation-Last Designation-Component@c4487810-f496-4105-b219-5d2a834cc586"]')).toBeVisible();
     //await page.locator('input[name="AttributeType@lastDesignation-Last Designation-Component@c4487810-f496-4105-b219-5d2a834cc586"]').fill('QA');
     await page.locator('div[data-testid="datePicker_trigger"]').nth(0).click();
@@ -135,17 +135,17 @@ test('Case1',async({page})=>
     }
     await page.waitForTimeout(3000);
     await page.locator('//button[@data-testid="price-details-submit-button"]').click();
-    await page.fill('//input[@id="CARD_NUMBER"]', '4012001037141112');
-    await page.fill('#EXPIRY_MONTH', '12');
-    await page.fill('#EXPIRY_YEAR', '26');
+    await page.fill('//input[@id="cardnumber"]', '4012001037141112');
+    await page.fill('#cc-exp', '1226');
+    //await page.fill('#EXPIRY_YEAR', '26');
     await page.fill('#CVV', '123');
-    await page.fill('#CARD_HOLDER_NAME', 'Abhi');
-    await page.click('#checkbox');
+    await page.fill('#cardholder-name', 'Abhi');
+    //await page.click('#checkbox');
     await page.getByRole('button', { name: /Pay/ }).click();
-    await page.waitForTimeout(5000);
-    await page.fill('input[type="text"]', '123456');
-    await page.click('input[type="submit"]');
-    await page.waitForTimeout(5000);
+    await page.pause();
+    await page.getByRole('button', { name: 'Track application status' }).click();
+    await expect(page.getByRole('button', { name: 'View Summary' })).toBeVisible();
+
 
 
 
