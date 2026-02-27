@@ -4,7 +4,7 @@ test('Case1',async({page})=>
     test.setTimeout(240000);
     await page.goto("https://app.preprod.dataflowgroup.com/en/onboarding/signin");
     await page.waitForTimeout(2000);
-    await page.locator("//input[@placeholder='Enter email ID']").fill("gunjiabhiram+dhpregression6@dataflowgroup.com");
+    await page.locator("//input[@placeholder='Enter email ID']").fill("gunjiabhiram+dhpregression9@dataflowgroup.com");
     await page.locator("#applicantOnboardingCaptcha").fill("123456");
     await page.click("[data-testid='signInCheckbox']");
     await page.click("//div[text()='Get OTP']");
@@ -55,6 +55,7 @@ test('Case1',async({page})=>
     await page.getByText("Norway").first().click();
     //await page.waitForTimeout(3000);
     await page.getByText("The Norwegian Directorate of Health (Helsedirektoratet)").click();
+    await page.getByRole('button', { name: "I'll do it myself" }).click();
     //await page.waitForTimeout(1000);
     await page.click('[data-testid="testSpeciality-dropdownInput"]');
     await page.getByText("Authorisation Application").click();
@@ -143,7 +144,7 @@ test('Case1',async({page})=>
     //await page.click('#checkbox');
     await page.getByRole('button', { name: /Pay/ }).click();
     await page.pause();
-    await page.getByRole('button', { name: 'Track application status' }).click();
+    await page.getByRole('button', { name: 'Check Status' }).click();
     await expect(page.getByRole('button', { name: 'View Summary' })).toBeVisible();
 
 
